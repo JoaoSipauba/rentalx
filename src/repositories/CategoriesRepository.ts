@@ -1,14 +1,10 @@
-import { v4 as uuidV4 } from "uuid";
-
 import { Category } from "../model/Category";
+import {
+  ICategoriesRepository,
+  ICreateCategoryDTO,
+} from "./ICategoriesRepository";
 
-// DTO => Data tranfer object
-interface ICreateCategoryDTO {
-  name: string;
-  description: string;
-}
-
-class CategoriesRepository {
+class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[] = [];
 
   constructor() {
@@ -19,7 +15,6 @@ class CategoriesRepository {
     const category = new Category();
 
     Object.assign(category, {
-      id: uuidV4(),
       name,
       description,
       created_at: new Date(),
