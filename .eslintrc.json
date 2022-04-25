@@ -35,13 +35,14 @@
         }
         ],
         "no-use-before-define": [
-          "no-error", 
+          "error", 
           { 
             "functions": false, 
             "classes": false, 
             "variables": false 
           }
         ],
+        "array-callback-return":"off",
         "class-methods-use-this": "off",
         "import/prefer-default-export": "off",
         "no-shadow": "off",
