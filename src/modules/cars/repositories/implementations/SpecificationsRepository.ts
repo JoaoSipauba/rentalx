@@ -1,4 +1,4 @@
-import { Specification } from "../../model/Specification";
+import { Specification } from "../../entities/Specification";
 import {
   ICreateSpecificationDTO,
   ISpecificationRepository,
@@ -14,10 +14,10 @@ class SpecificationRepository implements ISpecificationRepository {
   }
 
   public static getInstance(): SpecificationRepository {
-    if(!SpecificationRepository.INSTANCE) {
+    if (!SpecificationRepository.INSTANCE) {
       SpecificationRepository.INSTANCE = new SpecificationRepository();
     }
-    
+
     return SpecificationRepository.INSTANCE;
   }
 
